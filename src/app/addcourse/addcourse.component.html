@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h3 class="text-center mb-4 text-primary">Add New Course</h3>
+
+      <form (ngSubmit)="AddCourse()">
+        <!-- Title -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Course Title</label>
+          <input 
+            type="text" 
+            id="title" 
+            class="form-control" 
+            [(ngModel)]="addcourse.title" 
+            name="title" 
+            required>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea 
+            id="description" 
+            class="form-control" 
+            [(ngModel)]="addcourse.description" 
+            name="description" 
+            rows="3" 
+            required></textarea>
+        </div>
+
+        <!-- Content URL -->
+        <div class="mb-3">
+          <label for="details" class="form-label">Content URL</label>
+          <input 
+            type="text" 
+            id="details" 
+            class="form-control" 
+            [(ngModel)]="addcourse.contentURL" 
+            name="details" 
+            required>
+        </div>
+
+        <!-- Instructor ID -->
+        <div class="mb-3">
+          <label for="instructorId" class="form-label">Instructor ID</label>
+          <input 
+            type="text" 
+            id="instructorId" 
+            class="form-control" 
+            [(ngModel)]="addcourse.instructorId" 
+            name="instructorId" 
+            required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Add Course</button>
+      </form>
+
+      <!-- Success / Error Messages -->
+      <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+    </div>
+  </div>
+</div>

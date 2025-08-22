@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <div *ngIf="courses.length > 0">
+    <h2 class="mb-3 text-primary">Courses by Instructor</h2>
+    <ul class="list-group">
+      <li *ngFor="let course of courses" class="list-group-item">
+        <h3 class="h5">{{ course.title }}</h3>
+        <p class="mb-2">{{ course.description }}</p>
+        <button class="btn btn-warning btn-sm me-2" (click)="editCourse(course)">
+          Update Course
+        </button>
+        <!-- <button class="btn btn-success btn-sm" (click)="addAssessment(course.courseId)">Add Assessment</button> -->
+        <!-- <button class="btn btn-info btn-sm" (click)="ViewCourse(course.courseId)">View Course</button> -->
+        <!-- <a [href]="course.contentURL" target="_blank" class="btn btn-link">View Content</a> -->
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="courses.length === 0" class="alert alert-info mt-3">
+    No courses found for this instructor.
+  </div>
+</div>
+
+<!-- Update Course Modal -->
+<div *ngIf="selectedCourse" class="modal show d-block" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Course</h5>
+        <button type="button" class="btn-close" (click)="cancelEdit()"></button>
+      </div>
+
+      <div class="modal-body">
+        <form (ngSubmit)="updateCourse()">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input id="title" [(ngModel)]="selectedCourse.title" name="title" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input id="description" [(ngModel)]="selectedCourse.description" name="description" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contentURL" class="form-label">ContentURL:</label>
+            <input id="contentURL" [(ngModel)]="selectedCourse.contentURL" name="contentURL" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="instructorID" class="form-label">InstructorID:</label>
+            <input id="instructorID" [(ngModel)]="selectedCourse.instructorID" name="instructorID" class="form-control" required>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

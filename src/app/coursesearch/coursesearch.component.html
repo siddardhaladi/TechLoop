@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="con">
+  <h2>Search Results for "{{ searchQuery }}"</h2>
+  <div *ngIf="courses.length > 0; else noResults" class="course-list">
+    <div *ngFor="let course of courses" class="course-item">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+      <button (click)="EnrollCourse(course.courseId)">
+        {{ isEnrolled(course.courseId) ? 'Enrolled' : 'Enroll Course' }}
+      </button>
+    </div>
+  </div>
+  <ng-template #noResults>
+    <p>No courses found matching your search criteria.</p>
+  </ng-template>
+</div>

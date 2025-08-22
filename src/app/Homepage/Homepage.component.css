@@ -1,0 +1,226 @@
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+ 
+.homepage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+ 
+
+ 
+.hero {
+  background-image: url("https://tse4.mm.bing.net/th/id/OIP.dHj1nizlvDsp_6hq_0U-eAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+ 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+ 
+.hero-text h1 {
+  font-size: 2em;
+  margin: 0;
+  animation: slideIn 1s ease-in-out;
+}
+ 
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+ 
+.hero-text p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+ 
+.hero-text input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: box-shadow 0.3s;
+  width: 80%;
+  max-width: 400px;
+}
+ 
+.hero-text input:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+ 
+.course-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+ 
+.course-gallery img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+ 
+.course-gallery img:hover {
+  transform: scale(1.1);
+}
+ 
+.courses {
+  padding: 50px 20px;
+}
+ 
+.courses h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+ 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+ 
+.course-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+ 
+.course-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+ 
+.course-item h3 {
+  margin: 15px;
+  font-size: 1.2em;
+}
+ 
+.course-item p {
+  margin: 0 15px 15px;
+  color: #555;
+}
+ 
+.course-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+ 
+.course-item:hover img {
+  transform: scale(1.1);
+}
+ 
+footer {
+  background-color: #0b4686;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+ 
+footer p {
+  margin: 0;
+}
+ 
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+ 
+  .hero-text p {
+    font-size: 1em;
+  }
+ 
+  .nav button {
+    font-size: 0.9em;
+  }
+ 
+  .course-item h3 {
+    font-size: 1em;
+  }
+}
+.about {
+  background: linear-gradient(to right, #0b4686, #5e6494);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 1.2em;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+/* Style for the Explore Courses button */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #004494;
+  transform: scale(1);
+}

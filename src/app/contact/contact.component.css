@@ -1,0 +1,111 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3); /* soft background */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-image:url("https://www.ocfodisha.org/wp-content/uploads/2020/02/c-1.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  
+}
+
+.image-container {
+  
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 800px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.customer-care-box {
+  background: linear-gradient(135deg, #ffffff, #f4f7fb);
+  border: none;
+  border-radius: 15px;
+  padding: 40px;
+  width: 600px;
+  max-width: 95%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: -50px;
+}
+
+.customer-care-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.customer-care-box h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.customer-care-box p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.customer-care-box ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 20px;
+  color: #444;
+}
+
+.customer-care-box li {
+  margin: 12px 0;
+}
+
+.customer-care-box li strong {
+  color: #2c3e50;
+}
+
+button {
+  background: linear-gradient(to right, #4e73df, #1d4ed8);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #1d4ed8, #0f172a);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .customer-care-box {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .customer-care-box h2 {
+    font-size: 32px;
+  }
+
+  .customer-care-box p {
+    font-size: 16px;
+  }
+}

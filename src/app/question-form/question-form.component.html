@@ -1,0 +1,45 @@
+
+<div class="form-container">
+    <h2>Create Question</h2>
+    <form [formGroup]="questionForm" (ngSubmit)="submit()">
+        <label>Course ID:</label>
+        <input type="number" formControlName="courseId" (input)="updateAssessmentId()" required />
+
+        <!-- <label>Assessment ID:</label>
+        <input type="number" formControlName="assessmentId" required readonly /> -->
+
+        <label>Question Text:</label>
+        <textarea formControlName="questionText" required></textarea>
+
+        <label>Question Type:</label>
+        <select formControlName="questionType">
+            <option value="mcq">Multiple Choice</option>
+            <option value="fill">Fill in the Blanks</option>
+        </select>
+
+        <label>Correct Answer:</label>
+        <input type="text" formControlName="correctAnswer" required />
+
+        <!-- MCQ options -->
+        <div *ngIf="questionForm.get('questionType')?.value === 'mcq'">
+            <label>Options:</label>
+            <div formArrayName="options">
+                <div *ngFor="let option of options.controls; let i = index" [formGroupName]="i" class="option-row">
+                    <input type="text" formControlName="text" placeholder="Option Text" required />
+                    <label>
+                        <input type="checkbox" formControlName="isCorrect" />
+                        Correct
+                    </label>
+                    <button type="button" (click)="removeOption(i)">Remove</button>
+                </div>
+            </div>
+            <button type="button" (click)="addOption()">Add Option</button>
+        </div>
+
+        <button type="submit" class="submit">Submit</button>
+    </form>
+
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+</div>

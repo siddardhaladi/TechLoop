@@ -1,0 +1,76 @@
+.header {
+    background-color: #0b4686;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+ 
+.nav button {
+    background: none;
+    border: none;
+    color: white;
+    margin: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+ 
+.nav button:hover {
+    color: #ffdd57;
+}
+ 
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+ 
+.search-container input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+ 
+.search-container input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+ 
+.search-container button {
+    padding: 10px 10px;
+    background-color: #3d3939;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+ 
+.search-container button:hover {
+    background-color: #0e0e0e;
+    transform: scale(1.05);
+}
+ 
+/* NEW: Styling for welcome message */
+.welcome-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffdd57;
+    margin-left: 15px;
+}
+ 

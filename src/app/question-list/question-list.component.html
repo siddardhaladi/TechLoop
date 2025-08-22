@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="list-container">
+   
+    <div *ngFor="let q of questions" class="question-card">
+      <p><strong>Q:</strong> {{q.questionText}}</p>
+     
+      <div *ngIf="q.questionType === 'fill'">
+        <label for="answer-{{q.id}}">Your Answer:</label>
+        <input type="text" id="answer-{{q.id}}" [(ngModel)]="q.userAnswer">
+      </div>
+      <ul *ngIf="q.options?.length && q.questionType === 'mcq'">
+        <li *ngFor="let opt of q.options">
+          <input type="radio"  name="question-{{q.id}}" [(ngModel)]="q.userAnswer" [value]="opt.text"> {{opt.text}}
+        </li>
+      </ul>
+    </div>
+    <button (click)="submitQuiz()" [disabled]="!allQuestionsAnswered()">Submit Quiz</button>
+    <!-- <p *ngIf="score !== null">Your Score: {{score}}/{{questions.length}}</p> -->
+    <p class ="score-display">Your Score:{{score}}/{{questions.length}}</p>
+  </div>

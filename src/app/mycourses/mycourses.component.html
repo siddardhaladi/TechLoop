@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="course-list">
+        <div class="course" *ngFor="let course of courses">
+            <!-- <p>{{course.contentURL}}</p> -->
+ 
+            <!-- <img src="{{course.ContentURL}}" alt="{{course.Title}}"> -->
+            <h2>{{course.title}}</h2>
+            <p>{{course.description}}</p>
+            <!-- <a href="#" class="view-course-btn">Enroll Course</a> -->
+            <button (click)="viewCourseDetails(course.courseId)">
+              view course
+            </button>       
+        </div>
+    </div>
+</body>
+
+ 

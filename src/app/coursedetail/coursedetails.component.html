@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>    
+
+<div *ngIf="course" class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h2 class="card-title text-primary">{{ course.title }}</h2>
+      
+      <p class="card-text">
+        <strong>Description:</strong> {{ course.description }}
+      </p>
+      
+      <p class="card-text">
+        <strong>Content URL:</strong>
+        <a [href]="course.contentURL" target="_blank" class="btn btn-link">
+          Click here to view content
+        </a>
+      </p>
+
+      <!-- Future assessment input (kept as Bootstrap ready) -->
+<!--       
+      <div class="mb-3">
+        <label for="assessmentId" class="form-label">Enter Assessment ID:</label>
+        <input 
+          type="number" 
+          id="assessmentId" 
+          [(ngModel)]="assessmentId" 
+          placeholder="Assessment ID"
+          class="form-control"
+        >
+      </div>
+      <button 
+        class="btn btn-success" 
+        [disabled]="!assessmentId" 
+        (click)="goToAssessment()"
+      >
+        Take Assessment
+      </button> 
+       -->
+    </div>
+  </div>
+</div>
